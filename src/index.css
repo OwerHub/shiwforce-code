@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Cambo&family=Open+Sans:wght@300;400;500;600;700;800&family=Yellowtail&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.contentWrapper {
+  @apply px-1 xs:px-8  sm:px-4 md:px-36  lg:px-36 xl:px-64 2xl:px-80
+}
+
+
