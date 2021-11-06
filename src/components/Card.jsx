@@ -2,9 +2,12 @@ import { useEffect, useState } from "react";
 
 function Card(props) {
   const [isPair, setPair] = useState();
+
   useEffect(() => {
     setPair(props.count % 2);
-  }, []);
+  }, [props.count]);
+
+  console.log(isPair);
 
   return (
     <div
@@ -25,8 +28,8 @@ function Card(props) {
           group-hover:from-customGray-cardHvrUp group-hover:to-customGray-cardHvrDown
           group-hover:text-white
            md:h-96 lg:h-96  xl:h-80
-					rounded-${isPair ? "bl" : "br"}-2xl 
-					rounded-${isPair ? "tr" : "tl"}-2xl	`}
+					rounded-${props.count % 2 ? "bl" : "br"}-2xl 
+					rounded-${props.count % 2 ? "tr" : "tl"}-2xl	`}
       >
         <section
           className="		
@@ -79,7 +82,7 @@ function Card(props) {
             from-customGray-cardBG to-transparent
               group-hover:from-customGray-cardHvrDown group-hover:to-transparent 
 						 mt-1 h-5
-						 rounded-${!isPair ? "tr" : "tl"}-2xl
+						 rounded-${!props.count % 2 ? "tr" : "tl"}-2xl
 						`}
       ></div>
     </div>
