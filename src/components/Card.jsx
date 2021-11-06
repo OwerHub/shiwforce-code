@@ -1,14 +1,13 @@
 import { useEffect, useState } from "react";
 
 function Card(props) {
-  const [isPair, setPair] = useState();
+  const [isPair, setPair] = useState("1");
 
   useEffect(() => {
     setPair(props.count % 2);
-  }, [props.count]);
+  }, []);
 
   console.log(isPair);
-
   return (
     <div
       className={`
@@ -28,8 +27,10 @@ function Card(props) {
           group-hover:from-customGray-cardHvrUp group-hover:to-customGray-cardHvrDown
           group-hover:text-white
            md:h-96 lg:h-96  xl:h-80
-					rounded-${props.count % 2 ? "bl" : "br"}-2xl 
-					rounded-${props.count % 2 ? "tr" : "tl"}-2xl	`}
+           
+					${isPair ? "rounded-bl-2xl" : "rounded-br-2xl"} 
+					${isPair ? "rounded-tr-2xl" : "rounded-tl-2xl"}	`}
+        // eredetileg rounded${isPair ? "bl" : "br"}-2xl  -ként volt megadva, de úgy egy általam nem ismert oknál fogva nem működött
       >
         <section
           className="		
@@ -82,7 +83,7 @@ function Card(props) {
             from-customGray-cardBG to-transparent
               group-hover:from-customGray-cardHvrDown group-hover:to-transparent 
 						 mt-1 h-5
-						 rounded-${!props.count % 2 ? "tr" : "tl"}-2xl
+						 rounded-${!isPair ? "tr" : "tl"}-2xl
 						`}
       ></div>
     </div>
