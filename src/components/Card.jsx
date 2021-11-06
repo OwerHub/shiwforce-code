@@ -7,7 +7,6 @@ function Card(props) {
     setPair(props.count % 2);
   }, []);
 
-  console.log(isPair);
   return (
     <div
       className={`
