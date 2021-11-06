@@ -22,3 +22,6 @@ Az igazsághoz hozzá tartozik, hogy egy rect-tailwind template-em alapból volt
 
 Tisztelettel:
 V.A.
+
+utóirat:
+A buildelés során fellépett egy hiba, ami miatt a a dev szerveren jól működő lap nem pontosan úgy nézett ki, mint vártam. A problémát természetesen orvosoltam , de nyilván ez a határidőn túl volt.
